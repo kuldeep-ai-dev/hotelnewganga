@@ -1,5 +1,4 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/request'
+import { NextResponse, type NextRequest } from 'next/server'
 
 // Note: Full middleware protection usually requires @supabase/ssr or auth-helpers
 // This is a placeholder for future implementation if server-side auth is needed.
