@@ -1,0 +1,146 @@
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 80px 0 0 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.footerLogo {
+    width: auto;
+    height: 55px;
+    object-fit: contain;
+    filter: contrast(200%) brightness(0.8) invert(1);
+    mix-blend-mode: screen;
+}
+
+.logoText {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.desc {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    max-width: 400px;
+}
+
+.heading {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.linkList {
+    list-style: none;
+}
+
+.linkList li {
+    margin-bottom: 12px;
+}
+
+.linkList a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-fast);
+}
+
+.linkList a:hover {
+    color: var(--primary-color);
+}
+
+.contactList {
+    list-style: none;
+}
+
+.contactList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.contactList li svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.bottomContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 12px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 16px;
+}
+
+.socialLinks a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialLinks a:hover {
+    color: var(--primary-color);
+}
+
+.credit {
+    margin-top: 12px;
+    font-size: 0.85rem;
+}
+
+.credit a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.credit a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bottomContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+}

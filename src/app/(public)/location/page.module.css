@@ -1,0 +1,219 @@
+.main {
+    min-height: 100vh;
+    background-color: var(--background-light);
+}
+
+.hero {
+    height: 40vh;
+    min-height: 350px;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.heroContent h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.heroContent p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.transitSection {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.mapWrapper {
+    position: sticky;
+    top: 100px;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    height: 600px;
+}
+
+.mapPlaceholder {
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-alt);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-main);
+    border: 2px dashed var(--border-color);
+}
+
+.mapPin {
+    color: var(--accent-color);
+    margin-bottom: 24px;
+}
+
+.mapPlaceholder h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.mapPlaceholder p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+.mapNote {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.guideCol h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.landmarksList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.landmarkItem {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.landmarkItem:hover {
+    transform: translateX(5px);
+}
+
+.landmarkItem.highlighted {
+    border-left: 4px solid var(--accent-color);
+    background-color: rgba(226, 93, 79, 0.03);
+}
+
+.markIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--background-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: var(--primary-color);
+}
+
+.landmarkItem.highlighted .markIcon {
+    background-color: rgba(226, 93, 79, 0.1);
+    color: var(--accent-color);
+}
+
+.markContent h4 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: var(--text-main);
+}
+
+.markContent p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.transportOptions h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+
+.transportGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.transportCard {
+    background-color: var(--white);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.tIcon {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.transportCard p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mapWrapper {
+        height: 350px;
+        position: relative;
+        top: 0;
+    }
+
+    .transportGrid {
+        grid-template-columns: 1fr;
+    }
+}

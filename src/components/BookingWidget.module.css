@@ -1,0 +1,89 @@
+.widgetWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+    /* Pull up over the hero section */
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.widget {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    padding: 24px 32px;
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.inputGroup label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon {
+    color: var(--primary-color);
+}
+
+.inputWrapper input,
+.inputWrapper select {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-main);
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    cursor: pointer;
+}
+
+.divider {
+    width: 1px;
+    height: 50px;
+    background-color: var(--border-color);
+}
+
+.searchBtn {
+    padding: 18px 32px;
+    font-size: 1.05rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .widget {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        margin: 8px 0;
+    }
+
+    .inputGroup {
+        width: 100%;
+    }
+}
