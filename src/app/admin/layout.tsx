@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { LayoutDashboard, CalendarCheck, Utensils, Briefcase, Settings, LogOut, Bed, Image as ImageIcon, Plug } from "lucide-react";
+import { LayoutDashboard, CalendarCheck, Utensils, Briefcase, Settings, LogOut, Bed, Image as ImageIcon, Plug, Server, PenTool, Users } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import styles from "./layout.module.css";
 
@@ -54,10 +54,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         { name: "Room Bookings", path: "/admin", icon: <CalendarCheck size={20} /> },
         { name: "Rooms Management", path: "/admin/rooms", icon: <Bed size={20} /> },
         { name: "Site CMS", path: "/admin/cms", icon: <ImageIcon size={20} /> },
+        { name: "Blog System", path: "/admin/blogs", icon: <PenTool size={20} /> },
+        { name: "Lead Center", path: "/admin/leads", icon: <Users size={20} /> },
         { name: "Table Reservations", path: "/admin/restaurant", icon: <Utensils size={20} /> },
         { name: "Corporate Inquiries", path: "/admin/corporate", icon: <Briefcase size={20} /> },
         { name: "PMS Config", path: "/admin/pms", icon: <Plug size={20} /> },
         { name: "SEO Management", path: "/admin/seo", icon: <Settings size={20} /> },
+        { name: "System Settings", path: "/admin/settings", icon: <Server size={20} /> },
     ];
 
     // If login page, don't show sidebar

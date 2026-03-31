@@ -1,39 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* Premium Color Palette */
-  --primary-color: #C19A5B;
-  /* Warm Gold, fitting for a premium budget hotel */
-  --primary-hover: #b08945;
-  --secondary-color: #1A2834;
-  /* Deep Navy/Slate, very professional */
-  --accent-color: #E25D4F;
-  /* Warm Terracotta for CTA like Booking */
+  /* Premium Luxury Hotel Palette */
+  --primary-color: #d4af37; /* Rich Metallic Gold */
+  --primary-hover: #c5a025;
+  --secondary-color: #0f172a; /* Deep Slate / Navy */
+  --secondary-light: #1e293b;
+  --accent-color: #c2410c; /* Warm Rust/Terracotta */
 
-  --background-light: #FAFAFA;
-  --background-alt: #F0F2F5;
-  --text-main: #2C3E50;
-  --text-muted: #596b7d;
-  --border-color: #EAEAEA;
-  --white: #FFFFFF;
+  /* Neutrals */
+  --background-light: #fcfcfc; /* Crisp Off-White */
+  --background-alt: #f8fafc; /* Very Soft Grey/Blue tint */
+  --text-main: #334155; /* Slate 700 - Softer than black */
+  --text-muted: #64748b; /* Slate 500 */
+  --border-color: #e2e8f0; /* Slate 200 */
+  --white: #ffffff;
 
   /* Typography */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Outfit', sans-serif;
 
-  /* Animations & Transitions */
+  /* Elevations & Effects */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.4s ease-out;
   --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px -3px rgba(15, 23, 42, 0.08); /* Navy shadow */
+  --shadow-lg: 0 20px 40px -5px rgba(15, 23, 42, 0.12); /* Navy shadow */
+  --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.3); /* Gold glow */
+  
+  --radius-sm: 4px; /* Sharper corners for luxury feel */
+  --radius-md: 8px;
+  --radius-lg: 16px;
 }
-
-
 
 * {
   box-sizing: border-box;
@@ -48,20 +47,28 @@ body {
   font-family: var(--font-body);
   background-color: var(--background-light);
   color: var(--text-main);
-  scroll-behavior: smooth;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--secondary-color);
-  line-height: 1.2;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 a {
@@ -84,38 +91,39 @@ button {
   transition: all var(--transition-fast);
 }
 
-/* Premium Button Globals */
+/* Premium Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all var(--transition-fast);
+  padding: 14px 32px;
+  border-radius: 2px; /* Square/sharp lux feel */
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all var(--transition-normal);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
 }
 
 .btn-primary {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-glow);
 }
 
 .btn-accent {
-  background-color: var(--accent-color);
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--white);
 }
 
 .btn-accent:hover {
-  filter: brightness(1.1);
+  background-color: var(--secondary-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -128,7 +136,7 @@ button {
 
 .btn-outline:hover {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--white);
 }
 
 /* Base fade-in animation */
@@ -141,9 +149,29 @@ button {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+.fade-in-slow {
+  animation: fadeInSlow 1.2s ease-out forwards;
+}
+
+@keyframes fadeInSlow {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+/* The previous generic global classes (.seo-intro, .features-grid, etc.) were removed 
+   to force the usage of scoped modular CSS for a true premium, un-conflicting layout. */

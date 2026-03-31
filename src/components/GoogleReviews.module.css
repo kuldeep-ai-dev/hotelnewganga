@@ -1,0 +1,184 @@
+.section {
+    padding: 100px 0;
+    background-color: var(--background-light); /* Integrating with homepage flow */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metaBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--white);
+    padding: 12px 24px;
+    border-radius: 40px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.gLogo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #4285F4; /* Google Blue */
+    font-family: sans-serif;
+}
+
+.metaData {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.starsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fbbc05; /* Google Yellow */
+}
+
+.totalReviews {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.header h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+/* GRIDS */
+.reviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.reviewCard {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    padding: 40px 32px;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.reviewCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatarImg {
+    object-fit: cover;
+}
+
+.authorInfo {
+    flex-grow: 1;
+}
+
+.authorInfo h4 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.authorInfo span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.cardRating {
+    display: flex;
+    color: #fbbc05; /* Google Yellow */
+    gap: 2px;
+}
+
+.reviewText {
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+    flex-grow: 1; /* Pushes the 'Read More' link to the bottom */
+    margin-bottom: 24px;
+}
+
+.readMore {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    align-self: flex-start;
+}
+
+.readMore:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .reviewsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .reviewCard:last-child {
+        display: none; /* Hide 3rd on tablet to keep grid even */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviewsGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reviewCard:last-child {
+        display: flex; /* Show 3rd again on mobile stacked */
+    }
+
+    .header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .metaBadge {
+        margin-bottom: 16px;
+    }
+}

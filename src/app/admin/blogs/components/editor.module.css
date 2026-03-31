@@ -1,0 +1,146 @@
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 1000px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header h1 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+.formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input, .textarea {
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input:focus, .textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.seoSection {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #e2e8f0;
+    margin-top: 10px;
+}
+
+.seoSection h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+}
+
+.quillWrapper {
+    background: white;
+}
+
+.quillWrapper .ql-container {
+    min-height: 400px;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btnCancel, .btnDraft, .btnPublish {
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btnCancel {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: var(--text-muted);
+}
+
+.btnCancel:hover {
+    background: #f1f5f9;
+}
+
+.btnDraft {
+    background: #f1f5f9;
+    color: var(--text-main);
+}
+
+.btnDraft:hover {
+    background: #e2e8f0;
+}
+
+.btnPublish {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+.btnPublish:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}

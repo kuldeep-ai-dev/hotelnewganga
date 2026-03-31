@@ -1,36 +1,8 @@
 .main {
     min-height: 100vh;
     background-color: var(--background-light);
-}
-
-.hero {
-    height: 50vh;
-    min-height: 400px;
-    background: linear-gradient(rgba(26, 40, 52, 0.5), rgba(26, 40, 52, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    padding: 0 20px;
-}
-
-.heroContent h1 {
-    font-size: 3.5rem;
-    color: var(--white);
-    margin-bottom: 16px;
-}
-
-.heroContent p {
-    font-size: 1.15rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.infoSection {
-    padding: 100px 0;
-    background-color: var(--white);
+    flex-direction: column;
 }
 
 .container {
@@ -39,177 +11,380 @@
     padding: 0 20px;
 }
 
-.grid {
+/* =======================================
+   HERO / ZOOMA BACKGROUND
+======================================= */
+.heroWrapper {
+    height: 70vh;
+    min-height: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+}
+
+.heroImage {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    animation: slowPan 25s ease-in-out infinite alternate;
+}
+
+@keyframes slowPan {
+    from { transform: scale(1.05) translate(0px, 0px); }
+    to { transform: scale(1.1) translate(10px, -5px); }
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin-top: 60px; /* Counter navbar */
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    display: block;
+}
+
+.heroContent h1 {
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.heroContent p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+}
+
+/* =======================================
+   SPLIT CONTENT
+======================================= */
+.diningSection {
+    padding: 120px 0;
+}
+
+.diningGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
-.infoCol h2 {
-    font-size: 2.5rem;
+.sectionLabel {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.diningText h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 32px;
+}
+
+.dropCapText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-main);
     margin-bottom: 24px;
 }
 
-.infoCol p {
-    font-size: 1.1rem;
+.dropCapText::first-letter {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 4px;
+    color: var(--primary-color);
+}
+
+.subText {
+    font-size: 1.05rem;
     color: var(--text-muted);
-    line-height: 1.8;
     margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Info Card List */
+.timingCard {
+    background-color: var(--background-alt);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    border-top: 4px solid var(--primary-color);
 }
 
 .infoList {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .infoList li {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-    font-size: 1.05rem;
+    gap: 20px;
     color: var(--text-main);
-    background-color: var(--background-alt);
-    padding: 16px 24px;
-    border-radius: var(--radius-sm);
-    transition: transform var(--transition-fast);
 }
 
-.infoList li:hover {
-    transform: translateX(10px);
-    background-color: var(--border-color);
+.infoList li strong {
+    display: block;
+    font-size: 1.05rem;
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-bottom: 2px;
 }
 
-.icon {
+.infoList li span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.iconBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--white);
     color: var(--primary-color);
-}
-
-.imageGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.gridImg {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-slow);
+    flex-shrink: 0;
 }
 
-.gridImg:hover {
-    transform: scale(1.05);
+/* Image Showcase */
+.imageShowcase {
+    position: relative;
+    height: 600px;
 }
 
-.reservationSection {
-    padding: 100px 0;
-    background-color: var(--background-alt);
+.mainImageWrap {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
 }
 
-.reservationContainer {
+.objectCover {
+    object-fit: cover;
+}
+
+.accentCard {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.4);
+    width: 320px;
+    z-index: 10;
+}
+
+.accentCard h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.accentCard p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =======================================
+   RESERVATION FORM WRAPPER
+======================================= */
+.reservationWrapper {
+    background-color: var(--secondary-color);
+    padding: 120px 0;
+    margin-top: 60px; /* Overlap fix gap */
+}
+
+.formContainer {
     max-width: 800px;
     margin: 0 auto;
-    background-color: var(--white);
-    padding: 60px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
 }
 
 .formHeader {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    color: var(--white);
 }
 
 .formHeader h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    color: var(--white);
     margin-bottom: 12px;
 }
 
 .formHeader p {
-    color: var(--text-muted);
+    color: #cbd5e1;
     font-size: 1.1rem;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.inputRow {
-    display: flex;
-    gap: 24px;
-}
-
-.inputGroup {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.inputGroup label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-
-.inputGroup input,
-.inputGroup select {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    padding: 16px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    outline: none;
+/* =======================================
+   FOOTER LINKS GRID
+======================================= */
+.pageFooter {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
     background-color: var(--background-light);
-    transition: border-color var(--transition-fast);
 }
 
-.inputGroup input:focus,
-.inputGroup select:focus {
+.footerLinksGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.footerLinkCard {
+    background-color: var(--background-alt);
+    padding: 40px;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-color);
+}
+
+.footerLinkCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
     border-color: var(--primary-color);
 }
 
-.submitBtn {
-    margin-top: 16px;
-    padding: 18px;
-    font-size: 1.1rem;
+.cardEyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: block;
 }
 
-.message {
-    text-align: center;
-    margin-top: 16px;
-    padding: 16px;
-    background-color: #d4edda;
-    color: #155724;
-    border-radius: var(--radius-sm);
-    font-weight: 500;
+.footerLinkCard h3 {
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+}
+
+.cardIcon {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: var(--primary-color);
+    transition: transform var(--transition-normal);
+}
+
+.footerLinkCard:hover .cardIcon {
+    transform: translateX(10px);
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+@media (max-width: 1024px) {
+    .diningGrid {
+        gap: 40px;
+    }
+    
+    .imageShowcase {
+        height: 500px;
+    }
 }
 
 @media (max-width: 900px) {
-    .grid {
+    .diningGrid {
         grid-template-columns: 1fr;
     }
 
-    .inputRow {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .reservationContainer {
-        padding: 32px 20px;
-        margin: 0 20px;
-    }
-
-    .imageCol {
+    .imageShowcase {
         order: -1;
+        margin-bottom: 60px;
+    }
+
+    .accentCard {
+        left: 20px;
+        bottom: -20px;
+        width: 80%;
+    }
+
+    .footerLinksGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .heroWrapper {
+        height: 60vh;
+    }
+
+    .heroContent h1 {
+        font-size: 2.2rem;
+    }
+
+    .diningSection {
+        padding: 60px 0;
+    }
+
+    .diningText h2 {
+        font-size: 2.2rem;
+    }
+
+    .imageShowcase {
+        height: 350px;
+    }
+
+    .accentCard {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: -40px;
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        box-shadow: none;
+    }
+
+    .mainImageWrap {
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+
+    .reservationWrapper {
+        padding: 60px 0;
+    }
+
+    .formHeader h2 {
+        font-size: 2rem;
     }
 }

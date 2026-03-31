@@ -1,36 +1,8 @@
 .main {
     min-height: 100vh;
     background-color: var(--background-light);
-}
-
-.hero {
-    height: 40vh;
-    min-height: 350px;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    padding: 0 20px;
-}
-
-.heroContent h1 {
-    font-size: 3rem;
-    color: var(--white);
-    margin-bottom: 16px;
-}
-
-.heroContent p {
-    font-size: 1.15rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.transitSection {
-    padding: 100px 0;
+    flex-direction: column;
 }
 
 .container {
@@ -39,102 +11,185 @@
     padding: 0 20px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-}
-
-.mapWrapper {
-    position: sticky;
-    top: 100px;
-    background-color: var(--white);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    height: 600px;
-}
-
-.mapPlaceholder {
-    height: 100%;
+/* =======================================
+   HERO / ZOOMA BACKGROUND
+======================================= */
+.heroWrapper {
+    height: 70vh;
+    min-height: 400px;
     width: 100%;
-    background-color: var(--background-alt);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+}
+
+.heroImage {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    animation: slowPan 25s ease-in-out infinite alternate;
+}
+
+@keyframes slowPan {
+    from { transform: scale(1.05) translate(0px, 0px); }
+    to { transform: scale(1.1) translate(-10px, -5px); }
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px;
-    color: var(--text-main);
-    border: 2px dashed var(--border-color);
+    padding: 0 20px;
 }
 
-.mapPin {
-    color: var(--accent-color);
+.heroContent {
+    max-width: 800px;
+    margin-top: 60px;
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary-color);
     margin-bottom: 24px;
+    display: block;
 }
 
-.mapPlaceholder h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
+.heroContent h1 {
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.mapPlaceholder p {
+.heroContent p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+}
+
+/* =======================================
+   TRANSIT & MAP GRID
+======================================= */
+.transitSection {
+    padding: 100px 0;
+}
+
+.introBlock {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.dropCapText {
+    font-size: 1.15rem;
+    line-height: 1.8;
     color: var(--text-muted);
-    font-size: 1.05rem;
-    margin-bottom: 24px;
 }
 
-.mapNote {
-    font-size: 0.9rem;
-    opacity: 0.7;
+.dropCapText strong {
+    color: var(--secondary-color);
+}
+
+.dropCapText::first-letter {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 4px;
+    color: var(--primary-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+}
+
+.sectionLabel {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
 }
 
 .guideCol h2 {
-    font-size: 2.2rem;
-    margin-bottom: 16px;
-}
-
-.subtitle {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 2.8rem;
+    color: var(--secondary-color);
     margin-bottom: 40px;
 }
 
+/* Fixed Map Styling */
+.mapCol {
+    position: relative;
+    /* Sticky map */
+    position: sticky;
+    top: 40px;
+}
+
+.mapWrapper {
+    height: 700px; /* Tall vertical map */
+    border-radius: var(--radius-lg);
+    background-color: var(--white);
+    padding: 12px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.mapBorder {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Priorities List */
 .landmarksList {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 60px;
 }
 
 .landmarkItem {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
     background-color: var(--white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast);
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--border-color);
 }
 
 .landmarkItem:hover {
-    transform: translateX(5px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .landmarkItem.highlighted {
-    border-left: 4px solid var(--accent-color);
-    background-color: rgba(226, 93, 79, 0.03);
+    border-left: 4px solid var(--primary-color);
+    background-color: var(--background-alt);
 }
 
 .markIcon {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: var(--background-alt);
+    background-color: rgba(212, 175, 55, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,15 +197,10 @@
     color: var(--primary-color);
 }
 
-.landmarkItem.highlighted .markIcon {
-    background-color: rgba(226, 93, 79, 0.1);
-    color: var(--accent-color);
-}
-
 .markContent h4 {
     font-size: 1.1rem;
     margin-bottom: 4px;
-    color: var(--text-main);
+    color: var(--secondary-color);
 }
 
 .markContent p {
@@ -161,20 +211,23 @@
 
 .badge {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: var(--accent-color);
+    top: 24px;
+    right: 24px;
+    background-color: var(--primary-color);
     color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.65rem;
+    font-weight: 700;
     padding: 4px 12px;
     border-radius: 20px;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
+/* Transport Blocks */
 .transportOptions h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 24px;
+    color: var(--secondary-color);
 }
 
 .transportGrid {
@@ -189,6 +242,7 @@
     border-radius: var(--radius-md);
     text-align: center;
     box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
 }
 
 .tIcon {
@@ -197,9 +251,76 @@
 }
 
 .transportCard p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+/* =======================================
+   FOOTER LINKS GRID
+======================================= */
+.pageFooter {
+    padding: 20px 20px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footerLinksGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.footerLinkCard {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 40px;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.footerLinkCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--secondary-light);
+}
+
+.cardEyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.footerLinkCard h3 {
+    color: var(--white);
+    font-size: 1.75rem;
+}
+
+.cardIcon {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: var(--primary-color);
+    transition: transform var(--transition-normal);
+}
+
+.footerLinkCard:hover .cardIcon {
+    transform: translateX(10px);
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+@media (max-width: 1024px) {
+    .grid {
+        gap: 40px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -207,13 +328,67 @@
         grid-template-columns: 1fr;
     }
 
-    .mapWrapper {
-        height: 350px;
+    .mapCol {
         position: relative;
         top: 0;
     }
 
+    .mapWrapper {
+        height: 400px;
+    }
+
     .transportGrid {
         grid-template-columns: 1fr;
+    }
+
+    .footerLinksGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .heroWrapper {
+        height: 60vh;
+    }
+
+    .heroContent h1 {
+        font-size: 2.2rem;
+    }
+
+    .transitSection {
+        padding: 60px 0;
+    }
+
+    .guideCol h2 {
+        font-size: 2.2rem;
+    }
+
+    .landmarkItem {
+        padding: 16px;
+    }
+
+    .markIcon {
+        width: 36px;
+        height: 36px;
+        margin-right: 12px;
+    }
+
+    .markContent h4 {
+        font-size: 0.95rem;
+    }
+
+    .markContent p {
+        font-size: 0.82rem;
+    }
+
+    .badge {
+        font-size: 0.55rem;
+        padding: 4px 8px;
+        top: 16px;
+        right: 16px;
+    }
+
+    .mapWrapper {
+        height: 350px;
     }
 }

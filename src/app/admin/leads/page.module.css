@@ -1,0 +1,162 @@
+.main {
+    padding: 30px;
+    background-color: var(--background-alt);
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.iconPrimary {
+    color: var(--primary-color);
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    box-sizing: content-box;
+}
+
+.titleContent h1 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.titleContent p {
+    color: var(--text-muted);
+}
+
+.contentCard {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--background-alt);
+}
+
+.tableHeader h2 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exportBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.exportBtn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.leadsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leadsTable th {
+    background: var(--background-alt);
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-align: left;
+    padding: 15px 25px;
+    font-size: 0.95rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.leadsTable td {
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+    vertical-align: middle;
+}
+
+.leadsTable tr:hover {
+    background: rgba(0,0,0,0.015);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.statusNew {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.statusContacted {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.typeBadge {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.actionBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.emptyState {
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text-muted);
+}

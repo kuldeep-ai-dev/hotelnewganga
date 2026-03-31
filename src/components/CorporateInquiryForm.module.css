@@ -1,0 +1,82 @@
+.formWrapper {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.formWrapper h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.formWrapper p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    outline: none;
+    background-color: var(--background-light);
+    transition: border-color var(--transition-fast);
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.inputRow {
+    display: flex;
+    gap: 20px;
+}
+
+.inputRow>div {
+    flex: 1;
+}
+
+.submitBtn {
+    margin-top: 16px;
+    padding: 16px;
+    font-size: 1.05rem;
+}
+
+.message {
+    text-align: center;
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .inputRow {
+        flex-direction: column;
+    }
+}

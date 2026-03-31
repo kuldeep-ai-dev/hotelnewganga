@@ -1,12 +1,12 @@
 .main {
     min-height: 100vh;
-    background-color: var(--background-light);
+    background-color: var(--background-alt);
 }
 
 .hero {
-    height: 35vh;
-    min-height: 300px;
-    background: linear-gradient(rgba(26, 40, 52, 0.5), rgba(26, 40, 52, 0.5)), url('https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    height: 40vh;
+    min-height: 350px;
+    background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.7)), url('/images/hotel/rECEPTION/DSC_8891.JPG') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,45 +16,138 @@
 }
 
 .heroContent h1 {
-    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--white);
     margin-bottom: 12px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.8);
 }
 
 .heroContent p {
-    font-size: 1.15rem;
-    opacity: 0.9;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--white);
+    opacity: 0.95;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 .bookingSection {
-    padding: 80px 0;
-    margin-top: -60px;
+    padding: 60px 0 100px;
+    position: relative;
+    z-index: 10;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.formCard {
+.gridWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
     background-color: var(--white);
     border-radius: var(--radius-lg);
-    padding: 48px;
     box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Left Panel - Deep Navy Marketing Copy */
+.infoPanel {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.infoPanel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.infoContent h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.infoContent p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.benefitsList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.iconBox {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.benefitText h4 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: var(--white);
+}
+
+.benefitText p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Right Panel - Form */
+.formPanel {
+    padding: 60px 50px;
+    background: var(--white);
 }
 
 .headerArea {
     margin-bottom: 40px;
-    text-align: center;
 }
 
 .headerArea h2 {
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
 }
 
 .headerArea p {
+    font-family: var(--font-body);
     color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
 .form {
@@ -71,8 +164,8 @@
 
 .divider {
     border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 8px 0;
+    border-top: 1px dashed var(--border-color);
+    margin: 10px 0;
 }
 
 .inputRow {
@@ -90,60 +183,103 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 8px;
+    color: var(--text-main);
+    margin-bottom: 10px;
 }
 
 .inputGroup input,
 .inputGroup select {
     font-family: var(--font-body);
     font-size: 1.05rem;
-    padding: 16px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
     outline: none;
     background-color: var(--background-alt);
     transition: all var(--transition-fast);
+    color: var(--secondary-color);
 }
 
 .inputGroup input:focus,
 .inputGroup select:focus {
     border-color: var(--primary-color);
     background-color: var(--white);
-    box-shadow: 0 0 0 3px rgba(193, 154, 91, 0.1);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+.inputGroup input::placeholder {
+    color: #94a3b8;
 }
 
 .actions {
     display: flex;
     justify-content: stretch;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .submitBtn {
     width: 100%;
-    padding: 20px;
-    font-size: 1.15rem;
+    padding: 22px;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
+}
+
+.submitBtn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(212, 175, 55, 0.4);
+}
+
+.submitBtn:disabled {
+    background: #cbd5e1;
+    color: #64748b;
+    box-shadow: none;
+    cursor: not-allowed;
 }
 
 .message {
     text-align: center;
-    margin-top: 16px;
+    margin-top: 20px;
     padding: 16px;
-    background-color: #d4edda;
-    color: #155724;
-    border-radius: var(--radius-sm);
+    background-color: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
-    .formCard {
-        padding: 32px 20px;
+/* Responsive collapse */
+@media (max-width: 900px) {
+    .gridWrapper {
+        grid-template-columns: 1fr;
     }
+    .infoPanel {
+        padding: 50px 30px;
+    }
+    .formPanel {
+        padding: 50px 30px;
+    }
+}
 
+@media (max-width: 768px) {
     .inputRow {
         flex-direction: column;
         gap: 24px;
+    }
+    .heroContent h1 {
+        font-size: 2.8rem;
     }
 }

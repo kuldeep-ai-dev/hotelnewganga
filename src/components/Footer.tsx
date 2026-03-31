@@ -13,7 +13,7 @@ export default function Footer() {
                     <Link href="/" className={styles.logoContainer}>
                         <Image
                             src="/images/hng-logo.jpg"
-                            alt="Hotel New Ganga Logo"
+                            alt="Hotel New Ganga Property Logo - Located near Nemcare & GMCH Hospital Guwahati"
                             width={55}
                             height={55}
                             className={styles.footerLogo}
@@ -30,7 +30,9 @@ export default function Footer() {
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/rooms">Rooms & Suites</Link></li>
                         <li><Link href="/restaurant">Restaurant</Link></li>
+                        <li><Link href="/blog">Hotel Blog</Link></li>
                         <li><Link href="/corporate">Corporate Stays</Link></li>
+                        <li><Link href="/site-map">Sitemap</Link></li>
                     </ul>
                 </div>
                 <div className={styles.col}>
@@ -46,7 +48,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Mail size={18} />
-                            <span>info@hotelnewganga.com</span>
+                            <span>sales@hotelnewganga.in</span>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +66,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <p className={styles.credit}>
-                    Made by <a href="https://www.mediageny.com" target="_blank" rel="noopener noreferrer">MediaGeny tech solutions</a>
+                    Made by <a href="https://www.mediageny.com" target="_blank" rel="noopener noreferrer">MediaGeny™</a>
                 </p>
             </div>
         </footer>

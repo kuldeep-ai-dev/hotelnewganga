@@ -1,0 +1,106 @@
+.main {
+    min-height: 80vh;
+    padding: 120px 20px 60px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin: 0;
+    color: var(--white);
+}
+
+.sitemapGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.sectionTitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.linkItem a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.linkItem a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.iconSpacer {
+    color: var(--primary-color);
+    margin-right: 8px;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    .main {
+        padding-top: 100px;
+    }
+}

@@ -1,0 +1,99 @@
+.reservationSection {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a2834 0%, #2c3e50 100%);
+}
+
+.reservationContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.formHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.formHeader h2 {
+    font-size: 2.2rem;
+    color: var(--white, #fff);
+    margin-bottom: 12px;
+}
+
+.formHeader p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--white, #fff);
+    padding: 40px;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-lg, 0 8px 30px rgba(0, 0, 0, 0.12));
+}
+
+.inputRow {
+    display: flex;
+    gap: 20px;
+}
+
+.inputRow>div {
+    flex: 1;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted, #666);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.inputGroup input,
+.inputGroup select {
+    font-family: var(--font-body, inherit);
+    font-size: 1rem;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: var(--radius-sm, 6px);
+    outline: none;
+    background-color: var(--background-light, #f9f9f9);
+    transition: border-color var(--transition-fast, 0.2s);
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+    border-color: var(--primary-color, #B8860B);
+}
+
+.submitBtn {
+    margin-top: 16px;
+    padding: 16px;
+    font-size: 1.05rem;
+}
+
+.message {
+    text-align: center;
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: var(--radius-sm, 6px);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .inputRow {
+        flex-direction: column;
+    }
+}

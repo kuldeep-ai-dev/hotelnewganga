@@ -1,0 +1,129 @@
+.main {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.iconPrimary {
+    color: var(--primary-color);
+    margin-top: 4px;
+}
+
+.titleContent h1 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.titleContent p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 800px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.settingsCard {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    padding: 40px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.iconSecondary {
+    color: var(--accent-color);
+}
+
+.cardHeader h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.cardDesc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.input {
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-main);
+    background-color: var(--background-light);
+    transition: all var(--transition-fast);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.helperText {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.submitBtn {
+    margin-top: 16px;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

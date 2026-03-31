@@ -1,0 +1,129 @@
+.curtainWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none; /* Let clicks pass if hidden */
+}
+
+.curtainTop, .curtainBottom {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: var(--background-alt); /* Deep Navy */
+    z-index: 1;
+    pointer-events: all; /* Block clicks while animating */
+}
+
+.curtainTop {
+    top: 0;
+    transform-origin: top;
+}
+
+.curtainBottom {
+    bottom: 0;
+    transform-origin: bottom;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Sits above the splitting doors */
+}
+
+/* ================================
+   1. The Engineered Mask & Line
+================================ */
+.goldLine {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(to top, rgba(212, 175, 55, 0), rgba(212, 175, 55, 1), rgba(212, 175, 55, 0));
+    z-index: -1;
+}
+
+.textMask {
+    overflow: hidden;
+    line-height: 1.1;
+    display: inline-block;
+}
+
+.assameseText {
+    font-size: 5rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.englishTextWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Letter spacing via flex gap */
+    margin-top: 12px;
+}
+
+.char {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+}
+
+/* ================================
+   2. Brand Stamp
+================================ */
+.brandStamp {
+    text-align: center;
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brandStamp h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--white);
+    margin: 0 0 8px 0;
+}
+
+.brandStamp p {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: rgba(212, 175, 55, 0.8);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .assameseText {
+        font-size: 4rem;
+    }
+    .char {
+        font-size: 0.75rem;
+    }
+    .brandStamp h2 {
+        font-size: 1.7rem;
+    }
+    .brandStamp p {
+        font-size: 0.65rem;
+    }
+}

@@ -1,10 +1,16 @@
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import PromoBanner from "@/components/PromoBanner";
 import { supabase } from "@/lib/supabase";
 import { getSiteContent } from "@/lib/cms";
+import { getSeoMetadata } from "@/lib/seo";
+import { BreadcrumbSchema } from "@/components/JsonLdSchema";
+
+export async function generateMetadata() {
+    return await getSeoMetadata("/rooms");
+}
 
 async function getRooms() {
     const { data, error } = await supabase
@@ -21,19 +27,38 @@ async function getRooms() {
 
 export default async function RoomsPage() {
     const rooms = await getRooms();
-    const heroBg = await getSiteContent("rooms_banner", "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80");
+    const heroBg = "/images/hotel/dELUXE/IMG20241223164637.jpg";
 
     return (
         <main className={styles.main}>
-            {/* Hero Section */}
-            <section
-                className={styles.hero}
-                style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})` }}
-            >
-                <div className={styles.heroContent}>
-                    <h1 className="fade-in">Rooms & Suites</h1>
-                    <p className="fade-in">Find the perfect room for your medical transit, business trip, or family stay.</p>
+            <BreadcrumbSchema
+                items={[
+                    { name: "Home", url: "https://www.hotelnewganga.in" },
+                    { name: "Rooms & Suites", url: "https://www.hotelnewganga.in/rooms" },
+                ]}
+            />
+
+            {/* Premium Hero */}
+            <header className={styles.heroWrapper}>
+                <div 
+                    className={styles.heroImage}
+                    style={{ backgroundImage: `url(${heroBg})` }}
+                />
+                <div className={styles.heroOverlay}>
+                    <div className={styles.heroContent}>
+                        <span className={`fade-in ${styles.eyebrow}`}>Accommodations</span>
+                        <h1 className="fade-in">Rooms & Suites</h1>
+                        <p className="fade-in">Experience unparalleled comfort and Assamese hospitality.</p>
+                    </div>
                 </div>
+            </header>
+
+            {/* SEO intro */}
+            <section className={styles.seoIntro}>
+                <p>
+                    Discover our selection of well-appointed <strong>AC rooms in Guwahati</strong> featuring complimentary Wi-Fi, premium soundproofing, and modern amenities.
+                    Strategically located on <strong>GS Road, Bhangagarh</strong>, we are the preferred choice for guests visiting Nemcare Hospital and GMCH.
+                </p>
             </section>
 
             {/* Rooms List */}
@@ -48,9 +73,10 @@ export default async function RoomsPage() {
                             <div key={room.id} className={`${styles.roomCard} ${index % 2 !== 0 ? styles.reverse : ""}`}>
                                 <div className={styles.imageCol}>
                                     <Image
-                                        src={room.image_url || "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80"}
-                                        alt={room.name}
+                                        src={room.image_url || "/images/hotel/SUPER%20DELUXE/IMG20241223165936.jpg"}
+                                        alt={`${room.name} — Affordable AC Hotel Room near Nemcare and GMCH Guwahati`}
                                         fill
+                                        sizes="(max-width: 900px) 100vw, 50vw"
                                         className={styles.roomImg}
                                     />
                                 </div>
@@ -68,14 +94,16 @@ export default async function RoomsPage() {
                                     <div className={styles.amenities}>
                                         {room.amenities && room.amenities.map((feature: string) => (
                                             <div key={feature} className={styles.amenityItem}>
-                                                <Check size={16} className={styles.checkIcon} />
-                                                {feature}
+                                                <div className={styles.checkWrapper}>
+                                                    <Check size={14} className={styles.checkIcon} />
+                                                </div>
+                                                <span>{feature}</span>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <Link href={`/book?room=${room.id}`} className={`btn btn-primary ${styles.bookBtn}`}>
-                                        Reserve Now
+                                    <Link href={`/book?room=${room.id}`} className={styles.reserveLink}>
+                                        Reserve This Room <ArrowRight size={18} />
                                     </Link>
                                 </div>
                             </div>
@@ -84,9 +112,23 @@ export default async function RoomsPage() {
                 </div>
             </section>
 
-            {/* CTA Promo Banner */}
-            <PromoBanner />
+            {/* Beautiful Page Footer Links */}
+            <section className={styles.pageFooter}>
+                <div className={styles.footerLinksGrid}>
+                    <Link href="/restaurant" className={styles.footerLinkCard}>
+                        <span className={styles.cardEyebrow}>Explore</span>
+                        <h3>Dining Experience</h3>
+                        <ArrowRight className={styles.cardIcon} size={24} />
+                    </Link>
+                    <Link href="/location" className={styles.footerLinkCard}>
+                        <span className={styles.cardEyebrow}>Navigate</span>
+                        <h3>Location & Map</h3>
+                        <ArrowRight className={styles.cardIcon} size={24} />
+                    </Link>
+                </div>
+            </section>
 
+            <PromoBanner />
         </main>
     );
 }

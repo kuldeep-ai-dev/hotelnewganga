@@ -1,48 +1,367 @@
 .main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(26, 40, 52, 0.45), rgba(26, 40, 52, 0.45)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--white);
-  padding: 0 20px;
+/* Base utility for layouts */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =======================================
+   HERO / ZOOMA BACKGROUND
+======================================= */
+.heroWrapper {
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+}
+
+.heroImage {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    /* Extra subtle scale for a parallax/zoom feel */
+    transform: scale(1.05);
+    animation: slowPan 30s ease-in-out infinite alternate;
+}
+
+@keyframes slowPan {
+    from { transform: scale(1.05) translate(0px, 0px); }
+    to { transform: scale(1.1) translate(-10px, -10px); }
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .heroContent {
-  max-width: 800px;
+    max-width: 850px;
+    color: var(--white);
+    /* Glass panel effect right on the text */
+    background: rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 60px 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    display: block;
 }
 
 .heroContent h1 {
-  font-size: 4rem;
-  color: var(--white);
-  margin-bottom: 24px;
+    color: var(--white);
+    margin-bottom: 24px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .heroContent p {
-  font-size: 1.25rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
+    font-size: 1.15rem;
+    color: #cbd5e1; /* Soft slate-200 */
+    margin-bottom: 40px;
+    line-height: 1.8;
 }
 
-.ctaBtn {
-  font-size: 1.1rem;
-  padding: 16px 36px;
+
+/* =======================================
+   STORY / SPLIT LAYOUT (SEO INTRO)
+======================================= */
+.storySection {
+    padding: 100px 0;
+    background-color: var(--background-light);
+}
+
+.storyGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.sectionLabel {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.storyTextContent h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 32px;
+}
+
+.dropCapText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    margin-bottom: 24px;
+}
+
+/* Beautiful drop cap for the first paragraph */
+.dropCapText::first-letter {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 4px;
+    color: var(--primary-color);
+}
+
+.storyTextContent p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.arrowLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.arrowLink:hover {
+    gap: 16px; /* Arrow slides right */
+    border-bottom-color: var(--primary-color);
+}
+
+
+/* Staggered Images */
+.storyImages {
+    position: relative;
+    height: 600px;
+    width: 100%;
+}
+
+.imgPrimary {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    z-index: 1;
+}
+
+.imgSecondary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 50%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -10px rgba(15, 23, 42, 0.4);
+    z-index: 2;
+    border: 10px solid var(--background-light); /* Frame effect */
+}
+
+.objectCover {
+    object-fit: cover;
+}
+
+
+/* =======================================
+   DARK NAVY FEATURE SECTION
+======================================= */
+.darkFeaturesSection {
+    background-color: var(--secondary-color);
+    padding: 100px 0;
+    color: var(--white);
+    position: relative;
+}
+
+.featuresHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.goldText {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.featuresHeader h2 {
+    color: var(--white);
+    font-size: 3rem;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.featureCardDark {
+    background: rgba(255, 255, 255, 0.03); /* Extremely subtle highlight */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 32px;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.featureCardDark:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(212, 175, 55, 0.2); /* Gold border on hover */
+}
+
+.iconWrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.featureCardDark h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.featureCardDark p {
+    color: #94a3b8; /* Slate 400 */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =======================================
+   CTA BANNER
+======================================= */
+.ctaBanner {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('/images/hotel/fRONT/DSC_8808.JPG') center/cover fixed;
+    padding: 120px 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.ctaBannerContent {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ctaBannerContent h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.ctaBannerContent p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+}
+
+
+/* =======================================
+   MOBILE RESPONSIVENESS
+======================================= */
+@media (max-width: 1024px) {
+    .storyGrid {
+        gap: 40px;
+    }
+    
+    .storyImages {
+        height: 500px;
+    }
+}
+
+@media (max-width: 900px) {
+    .featuresGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-  .heroContent h1 {
-    font-size: 2.25rem;
-  }
+    .heroWrapper {
+        height: 80vh;
+    }
 
-  .heroContent p {
-    font-size: 1.05rem;
-    padding: 0 10px;
-  }
+    .heroContent {
+        padding: 40px 20px;
+        background: rgba(15, 23, 42, 0.5); /* Less blur for perf on mobile */
+        backdrop-filter: blur(4px);
+    }
+
+    .storySection {
+        padding: 60px 0;
+    }
+
+    .storyGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .storyImages {
+        height: 400px;
+        order: -1; /* Picture first on mobile */
+        margin-bottom: 40px;
+    }
+
+    .storyTextContent h2 {
+        font-size: 2.2rem;
+    }
+
+    .darkFeaturesSection {
+        padding: 60px 0;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .featureCardDark {
+        padding: 30px 24px;
+    }
+
+    .ctaBanner {
+        padding: 80px 20px;
+    }
 }

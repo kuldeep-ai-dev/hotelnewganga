@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { supabase } from "@/lib/supabase";
 
 export const transporter = nodemailer.createTransport({
   host: "smtp.hostinger.com",
@@ -87,10 +88,26 @@ export function buildEmailHtml(title: string, rows: [string, string][], extraNot
 }
 
 export async function sendNotificationEmail(subject: string, html: string) {
-  const to = process.env.NOTIFY_EMAIL || process.env.EMAIL_USER;
+  let toList = process.env.NOTIFY_EMAIL || process.env.EMAIL_USER;
+
+  // Attempt to intercept custom email string from the admin database
+  try {
+      const { data } = await supabase
+          .from("site_content")
+          .select("content_value")
+          .eq("content_key", "admin_notification_email")
+          .single();
+          
+      if (data && data.content_value && data.content_value.trim() !== "") {
+          toList = data.content_value;
+      }
+  } catch (err) {
+      console.warn("Mailer fell back to internal ENV files for notification routing.");
+  }
+
   await transporter.sendMail({
     from: `"${HOTEL_NAME} Website" <${process.env.EMAIL_USER}>`,
-    to,
+    to: toList,
     subject: `[HNG] ${subject}`,
     html,
   });

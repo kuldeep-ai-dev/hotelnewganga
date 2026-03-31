@@ -24,7 +24,7 @@ const FALLBACK_ROOMS = [
         id: "fallback-1",
         name: "Deluxe Room",
         description: "Perfect for solo travelers and budget-focused couples. Features a comfortable double bed and city views.",
-        image_url: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80",
+        image_url: "/images/hotel/STANDARD/DSC_8835.JPG",
         amenities: ["Free Wi-Fi", "Kettle"],
         price_starting: null,
     },
@@ -32,7 +32,7 @@ const FALLBACK_ROOMS = [
         id: "fallback-2",
         name: "Superior Room",
         description: "Ideal for business travelers and medical reps. Enjoy premium bedding and a dedicated laptop-friendly workspace.",
-        image_url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+        image_url: "/images/hotel/dELUXE/IMG20241223164629.jpg",
         amenities: ["Free Wi-Fi", "Breakfast"],
         price_starting: null,
     },
@@ -55,9 +55,10 @@ export default async function RoomHighlights() {
                         <div key={room.id} className={styles.card}>
                             <div className={styles.imageWrapper}>
                                 <Image
-                                    src={room.image_url || "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80"}
-                                    alt={room.name}
+                                    src={room.image_url || "/images/hotel/SUPER%20DELUXE/IMG20241223165926.jpg"}
+                                    alt={`${room.name} — Premium Hotel Room near Nemcare Hospital and GMCH Guwahati`}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                     className={styles.img}
                                 />
                             </div>

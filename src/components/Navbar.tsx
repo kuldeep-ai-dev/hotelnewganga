@@ -24,7 +24,7 @@ export default function Navbar() {
                 <Link href="/" className={styles.logoContainer}>
                     <Image
                         src="/images/hng-logo.jpg"
-                        alt="Hotel New Ganga Logo"
+                        alt="Hotel New Ganga - Top Rated Premium Hotel on GS Road Guwahati"
                         width={45}
                         height={45}
                         className={styles.logoImg}
@@ -36,6 +36,7 @@ export default function Navbar() {
                     <Link href="/" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                     <Link href="/rooms" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Rooms & Suites</Link>
                     <Link href="/restaurant" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Restaurant</Link>
+                    <Link href="/blog" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
                     <Link href="/corporate" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Corporate</Link>
                     <Link href="/location" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Location</Link>
                     <Link href="/book" className={`btn btn-primary ${styles.bookBtn}`} onClick={() => setIsMobileMenuOpen(false)}>Book Now</Link>

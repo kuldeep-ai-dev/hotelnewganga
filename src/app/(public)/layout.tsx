@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 export default function PublicLayout({
     children,
@@ -11,6 +13,8 @@ export default function PublicLayout({
             <Navbar />
             {children}
             <Footer />
+            <WhatsAppWidget />
+            <ExitIntentPopup />
         </>
     );
 }
