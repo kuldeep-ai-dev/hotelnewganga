@@ -9,7 +9,6 @@ import { BreadcrumbSchema } from "@/components/JsonLdSchema";
 import { MapPin, Utensils, Briefcase, Shield, Wifi, Clock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import GoogleReviews from "@/components/GoogleReviews";
-import WelcomeAnimation from "@/components/WelcomeAnimation";
 import AnimatedHeroImage from "@/components/AnimatedHeroImage";
 import MotionReveal from "@/components/MotionReveal";
 
@@ -43,7 +42,6 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <WelcomeAnimation />
       <BreadcrumbSchema items={[{ name: "Home", url: "https://www.hotelnewganga.in" }]} />
 
       {/* Premium Hero with Structured Framer Motion Parallax Image Container */}

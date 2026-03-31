@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabase";
 import { X, Gift, Check, ArrowRight } from "lucide-react";
 import styles from "./exitIntent.module.css";
@@ -11,8 +11,14 @@ export default function ExitIntentPopup() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [hasFired, setHasFired] = useState(true); // Default true to prevent flash, effect checks storage
+    const isArmed = useRef(false);
 
     useEffect(() => {
+        // Arm the trigger only after the user spends 10 seconds on the site
+        const timer = setTimeout(() => {
+            isArmed.current = true;
+        }, 10000);
+
         // Prevent aggressive popup spam. Once per browser session.
         const alreadyShown = sessionStorage.getItem("hng_exit_intent_shown");
         if (alreadyShown) {
@@ -23,7 +29,7 @@ export default function ExitIntentPopup() {
 
         const handleMouseLeave = (e: MouseEvent) => {
             // If the mouse vertically leaves the top of the browser window (heading to tabs/URL bar)
-            if (e.clientY <= 0 && !hasFired) {
+            if (e.clientY <= 0 && !hasFired && isArmed.current) {
                 setIsVisible(true);
                 setHasFired(true);
                 sessionStorage.setItem("hng_exit_intent_shown", "true");
@@ -36,6 +42,7 @@ export default function ExitIntentPopup() {
         document.addEventListener("mouseleave", handleMouseLeave);
 
         return () => {
+            clearTimeout(timer);
             document.removeEventListener("mouseleave", handleMouseLeave);
         };
     }, [hasFired]);
