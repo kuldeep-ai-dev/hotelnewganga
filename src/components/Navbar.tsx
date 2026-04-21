@@ -23,9 +23,9 @@ export default function Navbar() {
             <div className={styles.container}>
                 <Link href="/" className={styles.logoContainer}>
                     <Image
-                        src="/images/hng-logo.jpg"
+                        src={isScrolled ? "/images/black.png" : "/images/white.png"}
                         alt="Hotel New Ganga - Top Rated Premium Hotel on GS Road Guwahati"
-                        width={45}
+                        width={180}
                         height={45}
                         className={styles.logoImg}
                         priority

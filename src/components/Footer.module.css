@@ -25,8 +25,7 @@
     width: auto;
     height: 55px;
     object-fit: contain;
-    filter: contrast(200%) brightness(0.8) invert(1);
-    mix-blend-mode: screen;
+    filter: brightness(0) invert(1);
 }
 
 .logoText {

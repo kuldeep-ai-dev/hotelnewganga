@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Hotel New Ganga",
     images: [
       {
-        url: "/images/hng-logo.jpg",
+        url: "/images/black.png",
         width: 1200,
         height: 630,
         alt: "Hotel New Ganga — Premium Stays near Nemcare & GMCH, Guwahati",

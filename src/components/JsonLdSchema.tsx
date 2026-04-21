@@ -14,7 +14,7 @@ export function HotelSchema() {
     "telephone": "+91-7099017799",
     "email": "info@hotelnewganga.com",
     "priceRange": "₹₹",
-    "image": "https://www.hotelnewganga.in/images/hng-logo.jpg",
+    "image": "https://www.hotelnewganga.in/images/black.png",
     "description":
       "Hotel New Ganga is a premium mid-market hotel on GS Road, Bhangagarh, Guwahati — just 5 minutes from Nemcare Hospital and GMCH. Ideal for medical visitors, corporate travellers, and families. AC rooms from ₹1286/night with free Wi-Fi, in-house restaurant, and 24/7 front desk.",
     "address": {

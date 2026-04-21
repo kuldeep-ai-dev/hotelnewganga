@@ -12,9 +12,9 @@ export default function Footer() {
                 <div className={styles.col}>
                     <Link href="/" className={styles.logoContainer}>
                         <Image
-                            src="/images/hng-logo.jpg"
+                            src="/images/white.png"
                             alt="Hotel New Ganga Property Logo - Located near Nemcare & GMCH Hospital Guwahati"
-                            width={55}
+                            width={220}
                             height={55}
                             className={styles.footerLogo}
                         />

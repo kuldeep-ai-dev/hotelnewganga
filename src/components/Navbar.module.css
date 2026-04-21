@@ -22,7 +22,6 @@
 
 .navbar.scrolled .logoImg {
     filter: none;
-    mix-blend-mode: multiply;
 }
 
 .container {
@@ -46,9 +45,8 @@
     width: auto;
     height: 45px;
     object-fit: contain;
-    filter: contrast(200%) brightness(0.8) invert(1);
-    mix-blend-mode: screen;
     transition: all var(--transition-normal);
+    filter: brightness(0) invert(1);
 }
 
 .logoText {

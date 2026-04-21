@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 const SITE_URL = "https://www.hotelnewganga.in";
 const SITE_NAME = "Hotel New Ganga";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/hng-logo.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/black.png`;
 
 /**
  * Per-page SEO defaults, following the MediaGeny audit recommendations.

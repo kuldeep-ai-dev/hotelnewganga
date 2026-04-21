@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: Params) {
                         },
                         "headline": post.title,
                         "description": post.excerpt || post.meta_description,
-                        "image": post.featured_image_url || "https://www.hotelnewganga.in/images/hng-logo.jpg",
+                        "image": post.featured_image_url || "https://www.hotelnewganga.in/images/black.png",
                         "author": {
                             "@type": "Organization",
                             "name": post.author || "Hotel New Ganga",
@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: Params) {
                             "name": "Hotel New Ganga",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.hotelnewganga.in/images/hng-logo.jpg"
+                                "url": "https://www.hotelnewganga.in/images/black.png"
                             }
                         },
                         "datePublished": post.created_at,

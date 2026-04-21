@@ -77,10 +77,10 @@ export default function LoginPage() {
                     <div className={styles.loginModule}>
                         <div className={styles.hotelBranding}>
                             <Image
-                                src="/images/hng-logo.jpg"
+                                src="/images/3d.png"
                                 alt="Hotel New Ganga Logo"
-                                width={120}
-                                height={120}
+                                width={180}
+                                height={180}
                                 className={styles.hngLogo}
                                 priority
                             />
