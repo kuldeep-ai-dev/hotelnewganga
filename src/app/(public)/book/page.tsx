@@ -5,6 +5,7 @@ import BookingForm from "./BookingForm";
 import { BedDouble, Clock, MapPin, Wifi } from "lucide-react";
 import MotionReveal from "@/components/MotionReveal";
 
+export const revalidate = 0;
 async function getRooms() {
     const { data, error } = await supabase
         .from("rooms")

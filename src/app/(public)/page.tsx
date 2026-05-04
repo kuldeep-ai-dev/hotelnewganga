@@ -16,6 +16,8 @@ export async function generateMetadata() {
   return await getSeoMetadata("/");
 }
 
+export const revalidate = 0;
+
 async function getRoomsForWidget() {
   const { data, error } = await supabase
     .from("rooms")
