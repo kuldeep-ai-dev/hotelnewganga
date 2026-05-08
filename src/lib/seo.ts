@@ -33,13 +33,13 @@ const PAGE_SEO: Record<
     keywords:
       "AC rooms Guwahati, budget rooms near hospital Guwahati, deluxe room GS Road, hotel rooms Bhangagarh, rooms near Nemcare Hospital",
   },
-  "/restaurant": {
+  "/banquet": {
     title:
-      "Restaurant in Guwahati | Multi-Cuisine Dining — Hotel New Ganga",
+      "Banquet Hall in Guwahati | Premium Event Space — Hotel New Ganga",
     description:
-      "Enjoy fresh multi-cuisine meals at Hotel New Ganga's in-house restaurant on GS Road, Guwahati. Open for breakfast, lunch & dinner. Room service available 24/7.",
+      "Host memorable events, meetings, and birthday celebrations at Hotel New Ganga's Banquet Hall on GS Road, Guwahati. Features a seamless buffet food system.",
     keywords:
-      "restaurant in Guwahati GS Road, multi-cuisine dining Bhangagarh, restaurant near Nemcare Hospital Guwahati, hotel restaurant Guwahati",
+      "banquet hall in Guwahati GS Road, meeting space Bhangagarh, birthday party venue Guwahati, hotel banquet Guwahati",
   },
   "/corporate": {
     title:

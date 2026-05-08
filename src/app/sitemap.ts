@@ -6,15 +6,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Connect to CMS to get dynamic blogs
   const { data: blogs } = await supabase
-      .from("blog_posts")
-      .select("slug, updated_at")
-      .eq("is_published", true);
+    .from("blog_posts")
+    .select("slug, updated_at")
+    .eq("is_published", true);
 
   const dynamicRoutes: MetadataRoute.Sitemap = (blogs || []).map((blog) => ({
-      url: `${baseUrl}/blog/${blog.slug}`,
-      lastModified: new Date(blog.updated_at || new Date()),
-      changeFrequency: "weekly",
-      priority: 0.7,
+    url: `${baseUrl}/blog/${blog.slug}`,
+    lastModified: new Date(blog.updated_at || new Date()),
+    changeFrequency: "weekly",
+    priority: 0.7,
   }));
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/restaurant`,
+      url: `${baseUrl}/banquet`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

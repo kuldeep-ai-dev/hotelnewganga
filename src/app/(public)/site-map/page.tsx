@@ -23,16 +23,16 @@ export default function SitemapPage() {
                             <h2 className={styles.sectionTitle}><Home size={22} /> Main Pages</h2>
                             <ul className={styles.linkList}>
                                 <li className={styles.linkItem}>
-                                    <Link href="/"><ArrowRightCircle size={14} className={styles.iconSpacer}/> Home</Link>
+                                    <Link href="/"><ArrowRightCircle size={14} className={styles.iconSpacer} /> Home</Link>
                                 </li>
                                 <li className={styles.linkItem}>
-                                    <Link href="/contact"><PhoneCall size={14} className={styles.iconSpacer}/> Contact Us</Link>
+                                    <Link href="/contact"><PhoneCall size={14} className={styles.iconSpacer} /> Contact Us</Link>
                                 </li>
                                 <li className={styles.linkItem}>
-                                    <Link href="/book"><ArrowRightCircle size={14} className={styles.iconSpacer}/> Book Your Stay</Link>
+                                    <Link href="/book"><ArrowRightCircle size={14} className={styles.iconSpacer} /> Book Your Stay</Link>
                                 </li>
                                 <li className={styles.linkItem}>
-                                    <Link href="/admin"><Shield size={14} className={styles.iconSpacer}/> Admin Portal</Link>
+                                    <Link href="/admin"><Shield size={14} className={styles.iconSpacer} /> Admin Portal</Link>
                                 </li>
                             </ul>
                         </section>
@@ -43,16 +43,16 @@ export default function SitemapPage() {
                             <h2 className={styles.sectionTitle}><BedDouble size={22} /> Hotel Services</h2>
                             <ul className={styles.linkList}>
                                 <li className={styles.linkItem}>
-                                    <Link href="/rooms"><ArrowRightCircle size={14} className={styles.iconSpacer}/> Rooms & Suites</Link>
+                                    <Link href="/rooms"><ArrowRightCircle size={14} className={styles.iconSpacer} /> Rooms & Suites</Link>
                                 </li>
                                 <li className={styles.linkItem}>
-                                    <Link href="/restaurant"><Utensils size={14} className={styles.iconSpacer}/> Restaurant & Dining</Link>
+                                    <Link href="/banquet"><Utensils size={14} className={styles.iconSpacer} /> Premium Banquet Hall</Link>
                                 </li>
                                 <li className={styles.linkItem}>
-                                    <Link href="/corporate"><Briefcase size={14} className={styles.iconSpacer}/> Corporate Stays</Link>
+                                    <Link href="/corporate"><Briefcase size={14} className={styles.iconSpacer} /> Corporate Stays</Link>
                                 </li>
                                 <li className={styles.linkItem}>
-                                    <Link href="/location"><MapPin size={14} className={styles.iconSpacer}/> Location & Reach</Link>
+                                    <Link href="/location"><MapPin size={14} className={styles.iconSpacer} /> Location & Reach</Link>
                                 </li>
                             </ul>
                         </section>

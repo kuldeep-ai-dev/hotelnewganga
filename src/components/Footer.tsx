@@ -29,7 +29,7 @@ export default function Footer() {
                     <ul className={styles.linkList}>
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/rooms">Rooms & Suites</Link></li>
-                        <li><Link href="/restaurant">Restaurant</Link></li>
+                        <li><Link href="/banquet">Banquet Hall</Link></li>
                         <li><Link href="/blog">Hotel Blog</Link></li>
                         <li><Link href="/corporate">Corporate Stays</Link></li>
                         <li><Link href="/site-map">Sitemap</Link></li>

@@ -25,7 +25,10 @@
 
 .heroImage {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-size: cover;
     background-position: center;
     transform: scale(1.05);
@@ -33,13 +36,21 @@
 }
 
 @keyframes slowPan {
-    from { transform: scale(1.05) translate(0px, 0px); }
-    to { transform: scale(1.1) translate(-5px, -5px); }
+    from {
+        transform: scale(1.05) translate(0px, 0px);
+    }
+
+    to {
+        transform: scale(1.1) translate(-5px, -5px);
+    }
 }
 
 .heroOverlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
     display: flex;
     align-items: center;
@@ -50,7 +61,8 @@
 
 .heroContent {
     max-width: 800px;
-    margin-top: 60px; /* Counter navbar */
+    margin-top: 60px;
+    /* Counter navbar */
 }
 
 .eyebrow {
@@ -210,9 +222,35 @@
     flex-shrink: 0;
 }
 
-.reserveLink {
+.actionRow {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
     margin-top: auto;
-    align-self: flex-start;
+}
+
+.galleryLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 10px 20px;
+    transition: all var(--transition-fast);
+}
+
+.galleryLink:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    background-color: rgba(15, 23, 42, 0.04);
+}
+
+.reserveLink {
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -294,6 +332,7 @@
    RESPONSIVE
 ======================================= */
 @media (max-width: 900px) {
+
     .roomCard,
     .roomCard.reverse {
         flex-direction: column;

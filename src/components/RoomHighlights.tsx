@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getRoomCoverImage } from "@/lib/rooms";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import styles from "./RoomHighlights.module.css";
@@ -55,7 +56,7 @@ export default async function RoomHighlights() {
                         <div key={room.id} className={styles.card}>
                             <div className={styles.imageWrapper}>
                                 <Image
-                                    src={room.image_url || "/images/hotel/SUPER%20DELUXE/IMG20241223165926.jpg"}
+                                    src={getRoomCoverImage(room.name)}
                                     alt={`${room.name} — Premium Hotel Room near Nemcare Hospital and GMCH Guwahati`}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

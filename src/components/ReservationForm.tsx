@@ -45,8 +45,8 @@ export default function ReservationForm() {
         <section className={styles.reservationSection}>
             <div className={styles.reservationContainer}>
                 <div className={styles.formHeader}>
-                    <h2>Reserve a Table</h2>
-                    <p>Ensure your spot by booking ahead. Walk-ins are also welcome.</p>
+                    <h2>Reserve the Hall</h2>
+                    <p>Ensure your spot by booking ahead for your events.</p>
                 </div>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
@@ -113,7 +113,7 @@ export default function ReservationForm() {
                     </div>
 
                     <button type="submit" className={`btn btn-primary ${styles.submitBtn}`} disabled={isSubmitting}>
-                        {isSubmitting ? "Submitting..." : "Book Table"}
+                        {isSubmitting ? "Submitting..." : "Reserve Hall"}
                     </button>
                     {message && <p className={styles.message}>{message}</p>}
                 </form>

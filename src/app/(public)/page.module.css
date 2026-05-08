@@ -24,7 +24,10 @@
 
 .heroImage {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-size: cover;
     background-position: center;
     /* Extra subtle scale for a parallax/zoom feel */
@@ -33,13 +36,21 @@
 }
 
 @keyframes slowPan {
-    from { transform: scale(1.05) translate(0px, 0px); }
-    to { transform: scale(1.1) translate(-10px, -10px); }
+    from {
+        transform: scale(1.05) translate(0px, 0px);
+    }
+
+    to {
+        transform: scale(1.1) translate(-10px, -10px);
+    }
 }
 
 .heroOverlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.8) 100%);
     display: flex;
     align-items: center;
@@ -78,7 +89,8 @@
 
 .heroContent p {
     font-size: 1.15rem;
-    color: #cbd5e1; /* Soft slate-200 */
+    color: #cbd5e1;
+    /* Soft slate-200 */
     margin-bottom: 40px;
     line-height: 1.8;
 }
@@ -155,7 +167,8 @@
 }
 
 .arrowLink:hover {
-    gap: 16px; /* Arrow slides right */
+    gap: 16px;
+    /* Arrow slides right */
     border-bottom-color: var(--primary-color);
 }
 
@@ -189,7 +202,6 @@
     overflow: hidden;
     box-shadow: 0 30px 60px -10px rgba(15, 23, 42, 0.4);
     z-index: 2;
-    border: 10px solid var(--background-light); /* Frame effect */
 }
 
 .objectCover {
@@ -234,7 +246,8 @@
 }
 
 .featureCardDark {
-    background: rgba(255, 255, 255, 0.03); /* Extremely subtle highlight */
+    background: rgba(255, 255, 255, 0.03);
+    /* Extremely subtle highlight */
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 40px 32px;
     border-radius: var(--radius-md);
@@ -245,7 +258,8 @@
     background: rgba(255, 255, 255, 0.06);
     transform: translateY(-5px);
     box-shadow: var(--shadow-glow);
-    border-color: rgba(212, 175, 55, 0.2); /* Gold border on hover */
+    border-color: rgba(212, 175, 55, 0.2);
+    /* Gold border on hover */
 }
 
 .iconWrapper {
@@ -267,7 +281,8 @@
 }
 
 .featureCardDark p {
-    color: #94a3b8; /* Slate 400 */
+    color: #94a3b8;
+    /* Slate 400 */
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -307,7 +322,7 @@
     .storyGrid {
         gap: 40px;
     }
-    
+
     .storyImages {
         height: 500px;
     }
@@ -326,7 +341,8 @@
 
     .heroContent {
         padding: 40px 20px;
-        background: rgba(15, 23, 42, 0.5); /* Less blur for perf on mobile */
+        background: rgba(15, 23, 42, 0.5);
+        /* Less blur for perf on mobile */
         backdrop-filter: blur(4px);
     }
 
@@ -340,7 +356,8 @@
 
     .storyImages {
         height: 400px;
-        order: -1; /* Picture first on mobile */
+        order: -1;
+        /* Picture first on mobile */
         margin-bottom: 40px;
     }
 

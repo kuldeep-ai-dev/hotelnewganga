@@ -1,4 +1,5 @@
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Images } from "lucide-react";
+import { getRoomCoverImage } from "@/lib/rooms";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -13,6 +14,8 @@ export async function generateMetadata() {
 }
 
 export const revalidate = 0;
+
+
 
 async function getRooms() {
     const { data, error } = await supabase
@@ -42,7 +45,7 @@ export default async function RoomsPage() {
 
             {/* Premium Hero */}
             <header className={styles.heroWrapper}>
-                <div 
+                <div
                     className={styles.heroImage}
                     style={{ backgroundImage: `url(${heroBg})` }}
                 />
@@ -75,7 +78,7 @@ export default async function RoomsPage() {
                             <div key={room.id} className={`${styles.roomCard} ${index % 2 !== 0 ? styles.reverse : ""}`}>
                                 <div className={styles.imageCol}>
                                     <Image
-                                        src={room.image_url || "/images/hotel/SUPER%20DELUXE/IMG20241223165936.jpg"}
+                                        src={getRoomCoverImage(room.name)}
                                         alt={`${room.name} — Affordable AC Hotel Room near Nemcare and GMCH Guwahati`}
                                         fill
                                         sizes="(max-width: 900px) 100vw, 50vw"
@@ -104,9 +107,15 @@ export default async function RoomsPage() {
                                         ))}
                                     </div>
 
-                                    <Link href={`/book?room=${room.id}`} className={styles.reserveLink}>
-                                        Reserve This Room <ArrowRight size={18} />
-                                    </Link>
+                                    <div className={styles.actionRow}>
+                                        <Link href={`/rooms/${room.id}/gallery`} className={styles.galleryLink}>
+                                            <Images size={18} />
+                                            View Gallery
+                                        </Link>
+                                        <Link href={`/book?room=${room.id}`} className={styles.reserveLink}>
+                                            Reserve This Room <ArrowRight size={18} />
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         ))
@@ -117,7 +126,7 @@ export default async function RoomsPage() {
             {/* Beautiful Page Footer Links */}
             <section className={styles.pageFooter}>
                 <div className={styles.footerLinksGrid}>
-                    <Link href="/restaurant" className={styles.footerLinkCard}>
+                    <Link href="/banquet" className={styles.footerLinkCard}>
                         <span className={styles.cardEyebrow}>Explore</span>
                         <h3>Dining Experience</h3>
                         <ArrowRight className={styles.cardIcon} size={24} />

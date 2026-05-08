@@ -1,0 +1,211 @@
+.main {
+    min-height: 100vh;
+    background-color: var(--background-alt);
+}
+
+/* =====================
+   HEADER
+===================== */
+.pageHeader {
+    background-color: var(--secondary-color);
+    padding: 100px 20px 40px;
+}
+
+.headerInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: var(--primary-color);
+}
+
+.titleBlock {
+    text-align: center;
+    flex: 1;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.titleBlock h1 {
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0;
+}
+
+.bookBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.bookBtn:hover {
+    background-color: #c9a227;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+}
+
+/* =====================
+   GALLERY GRID
+===================== */
+.gallerySection {
+    padding: 60px 20px 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gridItem {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gridItem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gridItem:hover .img {
+    transform: scale(1.05);
+}
+
+/* Make first item in every 7 span wider for visual interest */
+.gridItem:nth-child(7n + 1) {
+    grid-column: span 2;
+}
+
+.noImages {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* =====================
+   BOTTOM CTA
+===================== */
+.cta {
+    margin-top: 80px;
+    background-color: var(--secondary-color);
+    border-radius: var(--radius-lg);
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.cta h2 {
+    color: var(--white);
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+
+.cta p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 36px;
+}
+
+.ctaBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 18px 40px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+
+.ctaBtn:hover {
+    background-color: #c9a227;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gridItem:nth-child(7n + 1) {
+        grid-column: span 1;
+    }
+
+    .headerInner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cta {
+        padding: 40px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pageHeader {
+        padding: 90px 20px 30px;
+    }
+}

@@ -35,7 +35,7 @@ export default function Navbar() {
                 <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ""}`}>
                     <Link href="/" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                     <Link href="/rooms" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Rooms & Suites</Link>
-                    <Link href="/restaurant" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Restaurant</Link>
+                    <Link href="/banquet" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Banquet Hall</Link>
                     <Link href="/blog" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
                     <Link href="/corporate" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Corporate</Link>
                     <Link href="/location" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>Location</Link>
